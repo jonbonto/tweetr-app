@@ -10,7 +10,9 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "vee-validate": "^3.3.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.3.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
