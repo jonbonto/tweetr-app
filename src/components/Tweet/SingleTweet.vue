@@ -85,6 +85,7 @@ export default {
     fetchTweet() {
       axios.get(`/tweets/${this.$route.params.id}`).then((response) => {
         this.tweet = response.data.data;
+        this.replies = response.data.data.replies.reverse();
       });
     },
     back() {
