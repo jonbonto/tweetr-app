@@ -42,7 +42,7 @@
         <div class="field" :class="{ error: errors.has('email') }">
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             :class="{ input: true, 'is-danger': errors.has('email') }"
             v-model="email"
