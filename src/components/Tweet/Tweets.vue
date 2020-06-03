@@ -1,6 +1,11 @@
 <template>
   <div class="ui feed">
-    <Tweet v-for="tweet in tweets" :key="tweet.id" :tweet="tweet" />
+    <Tweet
+      v-for="tweet in tweets"
+      :key="tweet.id"
+      :tweet="tweet"
+      :auth-user="authUser"
+    />
   </div>
 </template>
 
