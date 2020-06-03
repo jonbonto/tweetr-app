@@ -1,18 +1,11 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
-import VeeValidate from "vue-validate";
+import VeeValidate from "vee-validate";
 import axios from "axios";
 
 import App from "./App.vue";
+import router from "@/router";
 
-Vue.use(VueRouter);
-Vue.use(VueValidate);
-
-const router = new VueRouter({
-  base: "/",
-  mode: "history",
-  routes: [{ path: "/path", component: component }],
-});
+Vue.use(VeeValidate);
 
 Vue.config.productionTip = false;
 window.axios = axios;

@@ -8080,10 +8080,10 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-vee-validate@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-3.3.2.tgz#2eba99ea0bc6d5c76c999dd4f298dbcb32edb17e"
-  integrity sha512-Q/Fo8E34xa4K6oVd8CTPLG8ZXn7JziinN7sJgvAWt78moI67tFGqbot+mY1hUPh9ZMb/pWPoSNOnGxeEc/Vsyw==
+vee-validate@2:
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.2.15.tgz#dc6c925d21e57288d3308fe5a39a0941036c575a"
+  integrity sha512-4TOsI8XwVkKVLkg8Nhmy+jyoJrR6XcTRDyxBarzcCvYzU61zamipS1WsB6FlDze8eJQpgglS4NXAS6o4NDPs1g==
 
 vendors@^1.0.0:
   version "1.0.4"
@@ -8144,10 +8144,10 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.2.tgz#0099de402edb2fe92f9711053ab5a2156f239cad"
-  integrity sha512-5sEbcfb7MW8mY8lbUVbF4kgcipGXsagkM/X+pb6n0MhjP+RorWIUTPAPSqgPaiPOxVCXgAItBl8Vwz8vq78faA==
+vue-router@<3.0.0:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.8.1.tgz#9833c9ee57ac83beb0269056fefee71713f20695"
+  integrity sha512-MC4jacHBhTPKtmcfzvaj2N7g6jgJ/Z/eIjZdt+yUaUOM1iKC0OUIlO/xCtz6OZFFTNUJs/1YNro2GN/lE+nOXA==
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
