@@ -1,7 +1,7 @@
 <template>
   <div class="ui stackable three column centered grid container">
     <div class="column">
-      <h2 class="ui dividing header">Sign Up, It's free!</h2>
+      <h2 class="ui dividing header">Log In</h2>
 
       <Notification
         :message="notification.message"
@@ -9,40 +9,11 @@
         v-if="notification.message"
       />
 
-      <form class="ui form" @submit.prevent="signup">
-        <div class="field" :class="{ error: errors.has('name') }">
-          <label>Full Name</label>
-          <input
-            type="text"
-            name="name"
-            v-model="name"
-            v-validate="'required'"
-            placeholder="Full name"
-          />
-          <span v-show="errors.has('name')" class="is-danger">{{
-            errors.first("name")
-          }}</span>
-        </div>
-
-        <div class="field" :class="{ error: errors.has('username') }">
-          <label>Username</label>
-          <input
-            type="text"
-            name="username"
-            :class="{ input: true, 'is-danger': errors.has('username') }"
-            v-model="username"
-            v-validate="'required'"
-            placeholder="Username"
-          />
-          <span v-show="errors.has('username')" class="is-danger">{{
-            errors.first("username")
-          }}</span>
-        </div>
-
+      <form class="ui form" @submit.prevent="login">
         <div class="field" :class="{ error: errors.has('email') }">
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             :class="{ input: true, 'is-danger': errors.has('email') }"
             v-model="email"
@@ -70,7 +41,7 @@
         </div>
 
         <button class="fluid ui primary button" :disabled="!isFormValid">
-          SIGN UP
+          Login
         </button>
 
         <div class="ui hidden divider"></div>
@@ -80,7 +51,10 @@
 
       <div class="ui column grid">
         <div class="center aligned column">
-          <p>Got an account ? <router-link to="/login">Log In</router-link></p>
+          <p>
+            Don't have an account ?
+            <router-link to="/signup">Sign Up</router-link>
+          </p>
         </div>
       </div>
     </div>
@@ -91,14 +65,12 @@
 import Notification from "@/components/Notification";
 
 export default {
-  name: "SignupForm",
+  name: "LoginForm",
   components: {
     Notification,
   },
   data() {
     return {
-      name: "",
-      username: "",
       email: "",
       password: "",
       notification: {
@@ -118,11 +90,9 @@ export default {
     return token ? next("/") : next();
   },
   methods: {
-    signup() {
+    login() {
       axios
-        .post("/signup", {
-          name: this.name,
-          username: this.username,
+        .post("/login", {
           email: this.email,
           password: this.password,
         })
@@ -133,6 +103,9 @@ export default {
           this.$router.push("/");
         })
         .catch((error) => {
+          // clear form inputs
+          this.email = this.password = "";
+
           this.notification = Object.assign({}, this.notification, {
             message: error.response.data.message,
             type: error.response.data.status,
