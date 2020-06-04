@@ -3,7 +3,7 @@
     <h2 class="ui medium dividing header">Who to follow</h2>
     <i class="refresh link icon" @click="fetchWhoToFollow"></i>
 
-    <div class="ui divided link items">
+    <div class="ui divided link items custom">
       <div class="item" v-for="user in usersToFollow" :key="user.id">
         <div class="ui avatar image">
           <img src="https://www.gravatar.com/avatar/default?s=200&r=pg&d=mm" />
@@ -74,3 +74,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@media only screen and (max-width: 767px) {
+  .ui.items:not(.unstackable) > .item > .image.avatar {
+    width: 2em !important;
+    margin: 0;
+  }
+  .ui.items:not(.unstackable) > .item > .image.avatar + .content {
+    padding-left: 1.5em;
+    padding-top: 0;
+  }
+  .ui.items.custom:not(.unstackable) > .item {
+    flex-direction: row;
+  }
+}
+</style>
