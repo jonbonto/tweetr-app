@@ -21,6 +21,16 @@
           <div class="item">
             <div class="content">
               <router-link
+                :to="isOwner ? `/following` : `/${user.username}/following`"
+              >
+                <div class="header">Following</div>
+                <strong>{{ user.following.length }}</strong>
+              </router-link>
+            </div>
+          </div>
+          <div class="item">
+            <div class="content">
+              <router-link
                 :to="isOwner ? `/followers` : `/${user.username}/followers`"
               >
                 <div class="header">Followers</div>
