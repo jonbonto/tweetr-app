@@ -22,7 +22,7 @@
       </router-link>
       <router-link class="item" :to="`/${user.username}`">Profile</router-link>
       <router-link class="item" to="/settings/profile">Settings</router-link>
-      <a class="item"><i class="sign out icon"></i></a>
+      <a class="item" @click="logout"><i class="sign out icon"></i></a>
     </div>
   </div>
 </template>
@@ -69,6 +69,11 @@ export default {
           // clear input field
           this.tweet = "";
         });
+    },
+    logout() {
+      localStorage.removeItem("tweetr-token");
+
+      this.$router.push("/login");
     },
   },
 };
