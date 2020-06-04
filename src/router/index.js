@@ -9,6 +9,7 @@ import UserPasswordSettings from "@/components/User/Settings/UserPasswordSetting
 import UserProfile from "@/components/User/Profile/UserProfile";
 import UsersFollowing from "@/components/User/Profile/UsersFollowing";
 import UserFollowers from "@/components/User/Profile/UserFollowers";
+import FavoriteTweets from "@/components/User/Profile/FavoriteTweets";
 import SingleTweet from "@/components/Tweet/SingleTweet";
 
 Vue.use(VueRouter);
@@ -27,6 +28,15 @@ export default new VueRouter({
     { path: "/:username/followers", component: UserFollowers, props: true },
     { path: "/following", component: UsersFollowing },
     { path: "/:username/following", component: UsersFollowing, props: true },
+    {
+      path: "/favorites",
+      component: FavoriteTweets,
+    },
+    {
+      path: "/:username/favorites",
+      component: FavoriteTweets,
+      props: true,
+    },
     { path: "/:username", component: UserProfile, props: true },
   ],
 });
