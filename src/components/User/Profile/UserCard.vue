@@ -4,7 +4,7 @@
       <div class="content">
         <img
           src="https://www.gravatar.com/avatar/default?s=200&r=pg&d=mm"
-          class="right floated mini image"
+          class="right floated mini ui image"
         />
         <div class="header">
           <router-link :to="`/${user.username}`">{{ user.name }}</router-link>
